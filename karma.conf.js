@@ -9,7 +9,7 @@ module.exports = function(config){
 			'bower_components/lodash/lodash.js',
 			'bower_components/angular-simple-logger/dist/angular-simple-logger.js',
 			'bower_components/angular-google-maps/dist/angular-google-maps.js',
-			'*.js'
+			'test.js'
 		],
 		
 		autoWatch : true,
@@ -25,7 +25,7 @@ module.exports = function(config){
 			'karma-chrome-launcher',
 			'karma-firefox-launcher',
 			'karma-jasmine'
-		],
+		]
 
 	});
 };
