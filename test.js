@@ -1,9 +1,18 @@
 'use strict';
 
 describe('this spec', function() {
-	beforeEach(module('uiGmapgoogle-maps'));
+	var gmapProvider;
 	
-	it('tries to configure uiGmapGoogleMapApiProvider', inject(function(uiGmapGoogleMapApiProvider) {
-		expect(uiGmapGoogleMapApiProvider.configure).toBeDefined();
-	}));
+	beforeEach(function() {
+		angular.module('testAssist', ['uiGmapgoogle-maps'])
+		.config(function(uiGmapGoogleMapApiProvider) {
+			gmapProvider = uiGmapGoogleMapApiProvider;
+		});
+		module('testAssist');
+		inject();
+	});
+	
+	it('tries to configure uiGmapGoogleMapApiProvider', function() {
+		expect(gmapProvider.configure).toBeDefined();
+	});
 });
